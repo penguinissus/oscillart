@@ -32,17 +32,22 @@ var height = ctx.canvas.height;
 
 var amplitude = 40;
 var interval = null;
+var reset = false;
 
 var counter = 0;
 function drawWave(){
-    ctx.clearRect(0, 0, width, height); //clears canvas
-    x = 0;
-    y = height/2;
-    ctx.moveTo(x,y);
-    ctx.beginPath();
-
+    clearInterval(interval);
+    if(reset){
+        ctx.clearRect(0, 0, width, height); //clears canvas
+        x = 0;
+        y = height/2;
+        ctx.moveTo(x,y);
+        ctx.beginPath();
+    }
+    
     counter = 0;
     interval = setInterval(line, 20);
+    reset = false;
 }
 
 function line(){
@@ -60,10 +65,11 @@ function frequency(pitch){
     freq = pitch / 10000;
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + 1);
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + 0.9);
 }
 
 function handle(){
+    reset = true;
     //needs to be at top of function
     audioCtx.resume();
     gainNode.gain.value = 0;
