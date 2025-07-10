@@ -34,6 +34,7 @@ var amplitude = 40;
 var interval = null;
 var reset = false;
 
+//making sure any length fits in the drawing box
 var timepernote = 0;
 var length = 0;
 
