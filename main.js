@@ -16,13 +16,13 @@ gainNode.gain.value = 0;
 
 //create a map of notes
 notenames = new Map();
-notenames.set("C4",261.6);
-notenames.set("D4",293.7);
-notenames.set("E4",329.6);
-notenames.set("F4",349.2);
-notenames.set("G4",392.0);
-notenames.set("A4",440);
-notenames.set("B4",493.9);
+notenames.set("C",261.6);
+notenames.set("D",293.7);
+notenames.set("E",329.6);
+notenames.set("F",349.2);
+notenames.set("G",392.0);
+notenames.set("A",440);
+notenames.set("B",493.9);
 
 //define canvas variables
 var canvas = document.getElementById("canvas");
@@ -69,6 +69,20 @@ function handle(){
     gainNode.gain.value = 0;
     
     var usernotes = String(input.value);
-    frequency(notenames.get(usernotes));
-    drawWave();
+    var noteslist = [];
+    // frequency(notenames.get(usernotes));
+    for (i = 0; i < usernotes.length; i++){
+        noteslist.push(notenames.get(usernotes.charAt(i)));
+    }
+
+    let j = 0;
+    repeat = setInterval(() => {
+        if (j < noteslist.length) {
+            frequency(parseInt(notelist[j]));
+            drawWave();
+            j++;
+        } else {
+            clearInterval(repeat)
+        }
+    }, 1000);
 }
