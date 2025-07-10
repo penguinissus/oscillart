@@ -1,7 +1,9 @@
 const input = document.getElementById('input');
+
 //create web audio api elements
 const audioCtx = new AudioContext();
 const gainNode = audioCtx.createGain();
+
 //create oscillator node
 const oscillator = audioCtx.createOscillator();
 oscillator.connect(gainNode);
@@ -22,7 +24,40 @@ notenames.set("G4",392.0);
 notenames.set("A4",440);
 notenames.set("B4",493.9);
 
+//define canvas variables
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d"); //ctx is just the part of the canvas we draw on
+var width = ctx.canvas.width;
+var height = ctx.canvas.height;
+
+var amplitude = 40;
+var interval = null;
+
+var counter = 0;
+function drawWave(){
+    ctx.clearRect(0, 0, width, height); //clears canvas
+    x = 0;
+    y = height/2;
+    ctx.moveTo(x,y);
+    ctx.beginPath();
+
+    counter = 0;
+    interval = setInterval(line, 20);
+}
+
+function line(){
+    y = height/2 + (amplitude * Math.sin(x * 2 * Math.PI * freq));
+    ctx.lineTo(x,y);
+    ctx.stroke();
+    x = x+1;
+    counter++;
+    if (counter>50){
+        clearInterval(interval);
+    }
+}
+
 function frequency(pitch){
+    freq = pitch / 10000;
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
     gainNode.gain.setValueAtTime(0, audioCtx.currentTime + 1);
@@ -35,4 +70,5 @@ function handle(){
     
     var usernotes = String(input.value);
     frequency(notenames.get(usernotes));
+    drawWave();
 }
