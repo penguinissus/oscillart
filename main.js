@@ -76,7 +76,6 @@ function handle(){
     
     var usernotes = String(input.value);
     var noteslist = [];
-    // frequency(notenames.get(usernotes));
     for (i = 0; i < usernotes.length; i++){
         noteslist.push(notenames.get(usernotes.charAt(i)));
     }
@@ -84,7 +83,7 @@ function handle(){
     let j = 0;
     repeat = setInterval(() => {
         if (j < noteslist.length) {
-            frequency(parseInt(notelist[j]));
+            frequency(parseInt(noteslist[j]));
             drawWave();
             j++;
         } else {
