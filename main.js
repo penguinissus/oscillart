@@ -14,13 +14,13 @@ gainNode.gain.value = 0;
 
 //create a map of notes
 notenames = new Map();
-mapName.set(C4, 261.6);
-mapName.set(D4, 293.7);
-mapName.set(E4, 329.6);
-mapName.set(F4, 349.2);
-mapName.set(G4, 392.0);
-mapName.set(A4, 440);
-mapName.set(B4, 493.9);
+notenames.set("C4",261.6);
+notenames.set("D4",293.7);
+notenames.set("E4",329.6);
+notenames.set("F4",349.2);
+notenames.set("G4",392.0);
+notenames.set("A4",440);
+notenames.set("B4",493.9);
 
 function frequency(pitch){
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
@@ -32,7 +32,7 @@ function handle(){
     //needs to be at top of function
     audioCtx.resume();
     gainNode.gain.value = 0;
-
+    
     var usernotes = String(input.value);
     frequency(notenames.get(usernotes));
 }
