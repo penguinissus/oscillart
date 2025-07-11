@@ -55,7 +55,7 @@ function drawWave(){
 }
 
 function line(){
-    y = height/2 + amplitude * Math.sin(x * 2 * Math.PI * freq * (0.5 * length));
+    y = height/2 + amplitude * Math.sin(x * 2 * Math.PI * freq * 0.5 * length);
     ctx.lineTo(x,y);
     ctx.stroke();
     x = x+1;
@@ -69,7 +69,7 @@ function frequency(pitch){
     freq = pitch / 10000;
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + timepernote/1000);
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + timepernote/1000-0.1);
 }
 
 function handle(){
@@ -88,14 +88,15 @@ function handle(){
         noteslist.push(notenames.get(usernotes.charAt(i)));
     }
 
-    let j = 0;
+    j = 0;
     repeat = setInterval(() => {
         if (j < noteslist.length) {
             frequency(parseInt(noteslist[j]));
+            console.log(noteslist[j]);
             drawWave();
             j++;
         } else {
             clearInterval(repeat)
         }
-    }, timepernote/1000);
+    }, timepernote);
 }
