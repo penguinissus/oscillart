@@ -1,4 +1,6 @@
+//referencing elements created in index.html
 const input = document.getElementById('input');
+const color_picker = document.getElementById('color');
 
 //create web audio api elements
 const audioCtx = new AudioContext();
@@ -56,6 +58,7 @@ function drawWave(){
 
 function line(){
     y = height/2 + amplitude * Math.sin(x * 2 * Math.PI * freq * 0.5 * length);
+    ctx.strokeStyle = color_picker.value; //setting colour of line
     ctx.lineTo(x,y);
     ctx.stroke();
     x = x+1;
