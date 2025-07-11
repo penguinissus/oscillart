@@ -77,7 +77,8 @@ function frequency(pitch){
         clearInterval(setting);
         gainNode.gain.value = 0;
     }, ((timepernote)-10));
-    // gainNode.gain.setValueAtTime(0, audioCtx.currentTime + ((timepernote/1000)-0.1));
+    //they said remove this line but the audio doesn't stop without this
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + ((timepernote/1000)-0.1));
 }
 
 function handle(){
