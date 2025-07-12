@@ -117,6 +117,8 @@ function handle(){
             clearInterval(repeat)
         }
     }, timepernote);
+    //audio doesn't stop, try this?
+    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
 }
 
 var blob, recorder = null;
