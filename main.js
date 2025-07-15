@@ -86,8 +86,6 @@ function frequency(pitch){
         clearInterval(setting);
         gainNode.gain.value = 0;
     }, ((timepernote)-10));
-    //they said remove this line but the audio doesn't stop without this
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime + ((timepernote/1000)-0.1));
 }
 
 function handle(){
@@ -115,10 +113,12 @@ function handle(){
             j++;
         } else {
             clearInterval(repeat)
+            //audio doesn't stop, try this?
+            //tested, faulty
+            console.log("audio over");
+            gainNode.gain.setValueAtTime(0, audioCtx.currentTime+0.05); //chatgpt said +0.05 but it only works the first time
         }
     }, timepernote);
-    //audio doesn't stop, try this?
-    gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
 }
 
 var blob, recorder = null;
