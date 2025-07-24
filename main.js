@@ -75,6 +75,7 @@ function frequency(pitch){
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
     setting = setInterval(() => {gainNode.gain.value = vol_slider.value}, 1);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
+    //put 3 of them prevent web delay?
     setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)-10));
     setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)));
     setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)+10));
