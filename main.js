@@ -80,12 +80,14 @@ function line(){
 function frequency(pitch){
     freq = pitch / 10000;
     gainNode.gain.setValueAtTime(vol_slider.value, audioCtx.currentTime);
-    setting = setInterval(() => {gainNode.gain.value = vol_slider.value}, 1);
+    // setting = setInterval(() => {gainNode.gain.value = vol_slider.value}, 1);
+    setting = setInterval(() => {console.log("print")}, 0.7);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
     setTimeout(() => {
         clearInterval(setting);
         gainNode.gain.value = 0;
-    }, ((timepernote)-10));
+    }, ((timepernote)+5));
+    gainNode.gain.value = 0;
 }
 
 function handle(){
@@ -112,13 +114,12 @@ function handle(){
             drawWave();
             j++;
         } else {
-            clearInterval(repeat)
-            //audio doesn't stop, try this?
-            //tested, faulty
             console.log("audio over");
+            clearInterval(repeat)
             gainNode.gain.setValueAtTime(0, audioCtx.currentTime+0.05); //chatgpt said +0.05 but it only works the first time
         }
     }, timepernote);
+    gainNode.gain.value = 0;
 }
 
 var blob, recorder = null;
