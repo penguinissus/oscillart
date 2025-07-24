@@ -20,13 +20,6 @@ gainNode.gain.value = 0;
 
 //create a map of notes
 notenames = new Map();
-notenames.set("c",261.6);
-notenames.set("d",293.7);
-notenames.set("e",329.6);
-notenames.set("f",349.2);
-notenames.set("g",392.0);
-notenames.set("a",440);
-notenames.set("b",493.9);
 notenames.set("C",(261.6*2));
 notenames.set("D",(293.7*2));
 notenames.set("E",(329.6*2));
@@ -66,7 +59,7 @@ function drawWave(){
 }
 
 function line(){
-    y = height/2 + vol_slider.value * Math.sin(x * 2 * Math.PI * freq * 0.5 * length);
+    y = height/2 + ((vol_slider.value/100)*40 * Math.sin(x * 2 * Math.PI * freq * (0.5*length)));
     ctx.strokeStyle = color_picker.value; //setting colour of line
     ctx.lineTo(x,y);
     ctx.stroke();
@@ -79,15 +72,12 @@ function line(){
 
 function frequency(pitch){
     freq = pitch / 10000;
-    gainNode.gain.setValueAtTime(vol_slider.value, audioCtx.currentTime);
-    // setting = setInterval(() => {gainNode.gain.value = vol_slider.value}, 1);
-    setting = setInterval(() => {console.log("print")}, 0.7);
+    gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
+    setting = setInterval(() => {gainNode.gain.value = vol_slider.value}, 1);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
-    setTimeout(() => {
-        clearInterval(setting);
-        gainNode.gain.value = 0;
-    }, ((timepernote)+5));
-    gainNode.gain.value = 0;
+    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)-10));
+    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)));
+    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)+10));
 }
 
 function handle(){
@@ -116,10 +106,8 @@ function handle(){
         } else {
             console.log("audio over");
             clearInterval(repeat)
-            gainNode.gain.setValueAtTime(0, audioCtx.currentTime+0.05); //chatgpt said +0.05 but it only works the first time
         }
-    }, timepernote);
-    gainNode.gain.value = 0;
+    }, timepernote)
 }
 
 var blob, recorder = null;
