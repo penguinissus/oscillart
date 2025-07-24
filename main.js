@@ -105,9 +105,11 @@ function handle(){
             j++;
         } else {
             console.log("audio over");
+            gainNode.gain.value = 0;
             clearInterval(repeat)
         }
     }, timepernote)
+    gainNode.gain.value = 0;
 }
 
 var blob, recorder = null;
