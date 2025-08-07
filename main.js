@@ -73,12 +73,12 @@ function line(){
 function frequency(pitch){
     freq = pitch / 10000;
     gainNode.gain.setValueAtTime(100, audioCtx.currentTime);
-    setting = setInterval(() => {gainNode.gain.value = vol_slider.value}, 1);
+    setting = setInterval(() => {gainNode.gain.value = vol_slider.value; console.log("running setting again");}, 1);
     oscillator.frequency.setValueAtTime(pitch, audioCtx.currentTime);
     //put 3 of them prevent web delay?
-    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)-10));
-    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)));
-    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; }, ((timepernote)+10));
+    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; console.log("timpernote-10");}, ((timepernote)-10));
+    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; console.log("timepernote");}, ((timepernote)));
+    setTimeout(() => { clearInterval(setting); gainNode.gain.value = 0; console.log("timepernote+10");}, ((timepernote)+10));
 }
 
 function handle(){
@@ -103,11 +103,13 @@ function handle(){
             frequency(parseInt(noteslist[j]));
             console.log(noteslist[j]);
             drawWave();
+            console.log(gainNode.gain.value);
             j++;
         } else {
             console.log("audio over");
             gainNode.gain.value = 0;
             clearInterval(repeat)
+            console.log(gainNode.gain.value);
         }
     }, timepernote)
     gainNode.gain.value = 0;
