@@ -23,6 +23,18 @@
 }
 
 .customization-input {
+    display: flex;
+}
+
+.customization-input #color {
+    height: 50px;
+    border-radius: 15px;
+    border-color: navajowhite;
+    background-color: lightyellow;
+}
+
+.customization-input #vol-slider {
+    margin-left: 2rem;
 }
 
 #canvas {
