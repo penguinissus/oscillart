@@ -34,13 +34,25 @@
 }
 
 .customization-input #vol-slider {
-    margin-left: 2rem;
+    color: antiquewhite;
+}
+
+.customization-input p{
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+.container {
+    background-color: lightyellow;
 }
 
 #canvas {
     border: 5px solid black;
-    height: 500px;
-    width: 95%;
-    margin-bottom: 2em;
+    height: 300px;
+    width: 70%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 15%;
     align-items: center;
+    background-color: black;
 }
