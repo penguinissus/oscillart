@@ -1,9 +1,13 @@
+/* Import font */
 .east-sea-dokdo-regular {
   font-family: "East Sea Dokdo", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
+/* Title section */
+
+/* Input section */
 .input-boxes {
     display: flex;
     align-items: center;
@@ -49,6 +53,7 @@
     margin-left: 0.5rem;
 }
 
+/* Canvas section */
 .container {
     background-color: lightyellow;
 }
