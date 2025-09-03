@@ -1,11 +1,43 @@
-/* Import font */
+/* Import fonts */
 .east-sea-dokdo-regular {
   font-family: "East Sea Dokdo", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
+.gloria-hallelujah-regular {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Title section */
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.name {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.name h1 {
+    font-family: 'Gloria Hallelujah';
+}
+
+.name h2 {
+    font-family: 'Gloria Hallelujah'
+}
+
+.details {
+  display: flex;
+  flex-direction: row; 
+  gap: 1rem;
+}
 
 /* Input section */
 .input-boxes {
