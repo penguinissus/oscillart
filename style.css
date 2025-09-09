@@ -33,23 +33,49 @@
     font-family: 'Gloria Hallelujah';
 }
 
+/* details */
 .details {
   display: flex;
   flex-direction: row; 
-  gap: 1rem;
   justify-content: space-evenly;
+  gap: -1rem;
+  margin-bottom: 1rem;
 }
 
 .by-who {
     display: flex;
     flex-direction: column;
     font-family: 'East Sea Dokdo';
+    background-color: beige;
+    border-radius: 3rem;
+}
+
+.by-who h1 {
+    margin-left: 2rem;
+}
+
+.by-who h2 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.by-who h3 {
+    margin-left: 2rem;
 }
 
 .how-to-use {
     display: flex;
     flex-direction: column;
     font-family: 'East Sea Dokdo';
+    background-color: beige;
+    border-radius: 3rem;
+}
+
+.how-to-use h1 {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 2rem;
 }
 
 .how-to-use h2 {
