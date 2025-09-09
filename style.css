@@ -30,13 +30,31 @@
 }
 
 .name h2 {
-    font-family: 'Gloria Hallelujah'
+    font-family: 'Gloria Hallelujah';
 }
 
 .details {
   display: flex;
   flex-direction: row; 
   gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.by-who {
+    display: flex;
+    flex-direction: column;
+    font-family: 'East Sea Dokdo';
+}
+
+.how-to-use {
+    display: flex;
+    flex-direction: column;
+    font-family: 'East Sea Dokdo';
+}
+
+.how-to-use h2 {
+    margin-left: 20%;
+    font-size: 3rem;
 }
 
 /* Input section */
