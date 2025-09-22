@@ -10,38 +10,40 @@
 </head>
 
 <body>
-    <div class="heading">
-        <div class="name">
-            <h1>Wiggly Thing</h1>
-            <h2>or Sounds</h2>
-        </div>
-        <div class="details">
-            <div class="by-who">
-                <h1>by Jocelyn</h1>
-                <h2>github, slack, discord, probably everything else:</h2>
-                <h3>@penguinissus</h3>
+    <div class="all-text">
+        <div class="heading">
+            <div class="name">
+                <h1>Wiggly Thing</h1>
+                <h2>or Sounds</h2>
             </div>
-            <div class="how-to-use">
-                <h1>range of 7 notes, input them CAPITALIZED</h1>
-                <h2>ex: GFEFGFEDC</h2>
+            <div class="details">
+                <div class="by-who">
+                    <h1>by Jocelyn</h1>
+                    <h2>github, slack, discord, probably everything else:</h2>
+                    <h3>@penguinissus</h3>
+                </div>
+                <div class="how-to-use">
+                    <h1>range of 7 notes, input them CAPITALIZED</h1>
+                    <h2>ex: GFEFGFEDC</h2>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="input-boxes">
-        <div class="notes-input">
-            <input type="text" id="input">
-            <button id="submit" onclick="handle()">Submit your notes</button>
+        <div class="input-boxes">
+            <div class="notes-input">
+                <input type="text" id="input">
+                <button id="submit" onclick="handle()">Submit your notes</button>
+            </div>
+            <div class="customization-input">
+                <p>colour input:</p>
+                <input type="color" id="color" value="#ffffff">
+                <p>volume input:</p>
+                <input type="range" min="0" max="100" value="100" id="vol-slider">
+            </div>
+            <div id="recording-input">
+                <button id="record" onclick="toggle()">Start recording</button>
+            </div>
         </div>
-        <div class="customization-input">
-            <p>colour input:</p>
-            <input type="color" id="color" value="#ffffff">
-            <p>volume input:</p>
-            <input type="range" min="0" max="100" value="100" id="vol-slider">
-        </div>
-        <div id="recording-input">
-            <button id="record" onclick="toggle()">Start recording</button>
-        </div>
-    </div>
+    </div>    
     <div id="container">
         <canvas id="canvas"></canvas>
     </div>
