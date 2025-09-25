@@ -1,4 +1,5 @@
 /* Import fonts */
+/*Remove gloria hallelujah if not used at the end*/
 .east-sea-dokdo-regular {
   font-family: "East Sea Dokdo", sans-serif;
   font-weight: 400;
@@ -38,11 +39,12 @@ body {
 
 .name h1 {
     font-family: 'Papyrus';
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 .name h2 {
     font-family: 'Papyrus';
+    font-size: 3rem;
 }
 
 .all-text {
@@ -58,45 +60,41 @@ body {
   margin-bottom: 1rem;
 }
 
-/*bad fonts: papyrus, lucida console*/
-/*tbd: check on more*/
-/*comb through google fonts*/
-/*sans serif fonts are better*/
-/*Use more blocky fonts is erin's advice*/
 .by-who {
     display: flex;
     flex-direction: column;
-    font-family: 'Lucida Console';
+    font-family: 'Verdana';
+    font-size: 0.8rem;
 }
 
 .by-who h1 {
-    margin-left: 2rem;
+    margin-left: 3rem;
 }
 
 .by-who h2 {
-    margin-left: 2rem;
+    margin-left: 3rem;
     margin-right: 2rem;
+    font-size: 0.7rem;
 }
 
 .by-who h3 {
-    margin-left: 2rem;
+    margin-left: 3rem;
 }
 
 .how-to-use {
     display: flex;
     flex-direction: column;
-    font-family: 'Lucida Console';
+    font-family: 'Verdana';
 }
 
 .how-to-use h1 {
-    font-size: 1.5rem;
+    font-size: 0.8rem;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .how-to-use h2 {
-    margin-left: 20%;
     font-size: 3rem;
 }
 
@@ -116,11 +114,13 @@ body {
 }
 
 .notes-input #input {
-    border-radius: 5px;
+  border-radius: 5px;
+  font-family: "Gloria Hallelujah", cursive;
 }
 
 .notes-input #submit {
     border-radius: 8px;
+    border-width: 2px;
     margin-left: 1rem;
     font-family: 'East Sea Dokdo';
     font-size: 1.5rem;
@@ -136,10 +136,25 @@ body {
 }
 
 .customization-input #color {
-    height: 50px;
-    border-radius: 15px;
-    border-color: navajowhite;
-    background-color: rgb(241, 241, 154);
+  height: 30px;
+  border-radius: 40px;
+  border: 2px solid black;
+  background-color: rgb(231, 186, 101);
+
+  -webkit-appearance: none; /* remove default look (Chrome, Safari, Edge) */
+  -moz-appearance: none;    /* remove default look (Firefox) */
+  appearance: none;
+  padding: 0;
+}
+
+/* Chrome / Safari / Edge */
+.customization-input #color::-webkit-color-swatch-wrapper {
+  padding: 0; /* removes white spacing inside */
+}
+
+.customization-input #color::-webkit-color-swatch {
+  border: none; /* removes the inner border */
+  border-radius: 40px; /* round it like the outer border */
 }
 
 .customization-input #vol-slider {
@@ -160,17 +175,17 @@ body {
 
 /* Canvas section */
 .container {
-    background-color: rgb(255, 212, 69);
+    background-color: rgb(231, 186, 101);
 }
 
 #canvas {
     border: 5px solid rgb(231, 186, 101);
-    height: 300px;
+    height: 400px;
     width: 80%;
     margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left: 10%;
     align-items: center;
     background-color: black;
-    border-radius: 2rem;
+    border-radius: 5rem;
 }
