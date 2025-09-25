@@ -11,12 +11,12 @@
   font-style: normal;
 }
 
-.body {
+body {
     background-color: black;
 }
 
 .all-text {
-    background-color: gold;
+    background-color: rgb(231, 186, 101);
     border-radius: 5rem;
     margin: 0 10%;
     border-color: black;
@@ -37,12 +37,16 @@
 }
 
 .name h1 {
-    font-family: 'Gloria Hallelujah';
+    font-family: 'Papyrus';
     font-size: 3rem;
 }
 
 .name h2 {
-    font-family: 'Gloria Hallelujah';
+    font-family: 'Papyrus';
+}
+
+.all-text {
+    margin-top: 2rem;
 }
 
 /* details */
@@ -54,10 +58,15 @@
   margin-bottom: 1rem;
 }
 
+/*bad fonts: papyrus, lucida console*/
+/*tbd: check on more*/
+/*comb through google fonts*/
+/*sans serif fonts are better*/
+/*Use more blocky fonts is erin's advice*/
 .by-who {
     display: flex;
     flex-direction: column;
-    font-family: 'East Sea Dokdo';
+    font-family: 'Lucida Console';
 }
 
 .by-who h1 {
@@ -76,7 +85,7 @@
 .how-to-use {
     display: flex;
     flex-direction: column;
-    font-family: 'East Sea Dokdo';
+    font-family: 'Lucida Console';
 }
 
 .how-to-use h1 {
@@ -115,6 +124,7 @@
     margin-left: 1rem;
     font-family: 'East Sea Dokdo';
     font-size: 1.5rem;
+    background-color: rgb(231, 186, 101);;
 }
 
 .customization-input {
@@ -129,7 +139,7 @@
     height: 50px;
     border-radius: 15px;
     border-color: navajowhite;
-    background-color: lightyellow;
+    background-color: rgb(241, 241, 154);
 }
 
 .customization-input #vol-slider {
@@ -150,11 +160,11 @@
 
 /* Canvas section */
 .container {
-    background-color: lightyellow;
+    background-color: rgb(255, 212, 69);
 }
 
 #canvas {
-    border: 5px solid black;
+    border: 5px solid rgb(231, 186, 101);
     height: 300px;
     width: 80%;
     margin-top: 2rem;
