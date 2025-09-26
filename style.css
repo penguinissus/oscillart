@@ -29,6 +29,7 @@ body {
     flex-direction: row;
     gap: 1rem;
     justify-content: center;
+    font-family: 'Papyrus';
 }
 
 .name h1 {
