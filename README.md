@@ -1,6 +1,8 @@
 # Wiggly Thing or Sounds (as said on the website)
 oscillart - art with math  
-made for Athena Awards  
+made for Athena Awards 
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)  
+This took me 8.5 hours to make.  
 check out: https://penguinissus.github.io/oscillart/
 
 # Languages
